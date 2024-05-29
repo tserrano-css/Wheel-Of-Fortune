@@ -1,0 +1,91 @@
+:where(.ui-wheel-of-fortune) {
+  --_items: 12;
+  all: unset;
+  aspect-ratio: 1 / 1;
+  background: crimson;
+  container-type: inline-size;
+  direction: ltr;
+  display: grid;
+  place-content: center start;
+  &::after {
+    aspect-ratio: 1 / cos(30deg);
+    background-color: crimson;
+    clip-path: polygon(50% 100%, 100% 0, 0 0);
+    content: "";
+    height: 4cqi;
+    position: absolute;
+    place-self: start center;
+    scale: 1.4;
+  }
+
+  button {
+    aspect-ratio: 1 / 1;
+    background: hsla(0, 0%, 100%, 0.8);
+    border: 0;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 5cqi;
+    place-self: center;
+    width: 20cqi;
+  }
+}
+
+ul {
+  clip-path: inset(0 0 0 0 round 50%);
+  li {
+    align-content: center;
+    background: deepskyblue;
+    display: grid;
+    font-size: 5cqi;
+    grid-area: 1 / -1;
+    list-style: none;
+    padding-left: 1ch;
+    transform-origin: center right;
+    width: 50cqi;
+    height: calc((2 * pi * 50cqi) / var(--_items));
+    rotate: calc(360deg / var(--_items) * calc(var(--_idx) - 1));
+    background: hsl(
+      calc(360deg / var(--_items) * calc(var(--_idx))),
+      100%,
+      75%
+    );
+    clip-path: polygon(0% -2%, 100% 50%, 0% 106%);
+
+    &:nth-of-type(1) {
+      --_idx: 1;
+    }
+    &:nth-of-type(2) {
+      --_idx: 2;
+    }
+    &:nth-of-type(3) {
+      --_idx: 3;
+    }
+    &:nth-of-type(4) {
+      --_idx: 4;
+    }
+    &:nth-of-type(5) {
+      --_idx: 5;
+    }
+    &:nth-of-type(6) {
+      --_idx: 6;
+    }
+    &:nth-of-type(7) {
+      --_idx: 7;
+    }
+    &:nth-of-type(8) {
+      --_idx: 8;
+    }
+    &:nth-of-type(9) {
+      --_idx: 9;
+    }
+    &:nth-of-type(10) {
+      --_idx: 10;
+    }
+    &:nth-of-type(11) {
+      --_idx: 11;
+    }
+    &:nth-of-type(12) {
+      --_idx: 12;
+    }
+  }
+}
